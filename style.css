@@ -1,7 +1,17 @@
 body{
       background-color: blueviolet;
+      background-image: url(sccimg/image.jpg);
+      width: auto;
+      height: fit-content;
       color: aliceblue;
       font-size: x-large;
       text-align: center;
 
+}
+
+.math{
+      width: 20%;
+      height: 100%;
+      background-image: url(sccimg/images\ \(4\).jpg);
+      margin: auto;
 }
