@@ -23,7 +23,7 @@ function create() {
     if (num) {
         output.innerHTML += num + " * " + table + " = " + result + "<br>";
     }
-    else{
+    else {
         output.innerHTML = "  value sahii dall bhai "
     }
 }
@@ -38,45 +38,72 @@ button.addEventListener('click', create);
 ///question num 2
 
 
-//   function create2() {
-//       const num = +(document.querySelector('#list').value);
-//       const output = document.querySelector('#output'); // Assuming you have a <ul> element to display the list
+  function create2() {
+      const num = +(document.querySelector('#list').value);
+      const output = document.querySelector('#output'); // Assuming you have a <ul> element to display the list
 
-//       output.innerHTML = ""; // Clear previous content
+      output.innerHTML = ""; // Clear previous content
 
-//       for (let list = 1; list <= 10; list++) {
-//           const result = num = list;
-//           const listItem = document.createElement('ul');
-//           listItem.textContent = `${num} * ${list} = ${result}`;
-//           output.appendChild(listItem);
-//       }
-//   }
+      for (let list = 1; list <= 10; list++) {
+          const result = num = list;
+          const listItem = document.createElement('ul');
+          listItem.textContent = `${num} * ${list} = ${result}`;
+          output.appendChild(listItem);
+      }
+  }
 
-//   // Call the create function when the button is clicked
-//   const button1 = document.querySelector('#generate');
-//   button1.addEventListener('click', create);
+  // Call the create function when the button is clicked
+  const button1 = document.querySelector('#generate');
+  button1.addEventListener('click', create);
 
 
+  ///solve 
+
+const listValue =  document.querySelector('#list');
+const output = document.querySelector('#output');
+
+const arr= []
 
 function create2() {
-    const listValue = + document.querySelector('#list').value;
-    const output = document.querySelector('#output');
+    arr.push(listValue.value); 
+    console.log(arr);
 
     // Clear previous content
-    output.innerHTML = listValue;
-   
 
-    const itemCount = 5; // You can set the number of list items you want
+    listValue.value = "";
 
-    for (let i = 1; i <= 10; i++) {
-        const listItem = document.createElement('p');
-        listItem.textContent = `${listValue} - Item ${i}`;
-        output.appendChild(listItem);
+
+    arr.innerHTML = ''; // You can set the number of list items you want
+  
+    for (let i = 0; i < arr.length; i++) {
+        const listItem = arr[i];
+        output.innerHTML += `<br> <li>${listItem}</li> <br> <br>`
+        // listItem.textContent = `${listValue} - Item ${i}`;
+        // output.appendChild(listItem);
     }
 }
 
 
+const additem = document.querySelector("#list");
+const arry = document.querySelector("#output");
 
+const arr1 = [];
+
+function list() {
+    arr1.push(additem.value);
+    console.log(arr1);
+    additem.value = "";
+
+    arry.innerHTML = ""; // Clear the previous list content
+
+    for (let g = 0; g < arr1.length; g++) {
+        const item = arr1[g];
+        arry.innerHTML += `  <br> <li>${item}</li><br>
+        <button>Delete</button>
+        <button>Edit</button>`
+        ;
+    }
+}
 
 
 
@@ -128,19 +155,19 @@ function search() {
         if (fruits[i] === fruit) {
             isAvailable = true;
             break;
-        //    if (image) {
-        //     fruits `${banana}`
-        //     h3.innerHTML = URL(sccing)
-            
-        //    }
-            
-            
+            //    if (image) {
+            //     fruits `${banana}`
+            //     h3.innerHTML = URL(sccing)
+
+            //    }
+
+
         }
     }
 
     if (isAvailable) {
         fruitInput.value = `Yes, we have ${fruit}!`;
-        h3.innerHTML  = fruit;
+        h3.innerHTML = fruit;
 
     } else {
         fruitInput.value = `Sorry, ${fruit} is not available.`;
