@@ -73,7 +73,7 @@ function create2() {
     listValue.value = "";
 
 
-    arr.innerHTML = ''; // You can set the number of list items you want
+    output.innerHTML = ''; // You can set the number of list items you want
   
     for (let i = 0; i < arr.length; i++) {
         const listItem = arr[i];
