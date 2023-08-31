@@ -146,6 +146,7 @@ function list() {
 const fruitInput = document.querySelector("#fruit");
 const fruits = ['banana', 'apple', 'orange', 'mosambi', 'papita', 'nashpati', 'mango', 'peach', 'watermalain'];
 const h3 = document.querySelector("#head")
+const photo = document.querySelector("p")
 
 function search() {
     const fruit = fruitInput.value.toLowerCase();
@@ -168,6 +169,10 @@ function search() {
     if (isAvailable) {
         fruitInput.value = `Yes, we have ${fruit}!`;
         h3.innerHTML = fruit;
+        photo.src = "./acceste/banana-removebg-preview.png"
+        if (fruits[g] === fruit) {
+            photo.src = "./acceste/banana-removebg-preview.png" 
+        }
 
     } else {
         fruitInput.value = `Sorry, ${fruit} is not available.`;
